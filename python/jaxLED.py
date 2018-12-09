@@ -31,7 +31,7 @@ class LEDLight():
 	    self.setColor(0, 0, 0)
     def flashRandomColors(self, inputSeconds):
         counter = 0
-        while counter < int(100 * inputSeconds):
+        while counter < int(10 * inputSeconds):
 	        self.setColor(randint(0, 100), randint(0, 100), randint(0,100))
 	        time.sleep(.01)
 	        counter = counter + 1
@@ -62,4 +62,5 @@ def main():
         light.cleanUp
         exit()
 
-main()
+while True:
+    main()
