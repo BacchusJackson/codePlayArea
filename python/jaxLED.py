@@ -41,7 +41,6 @@ class LEDLight():
         while datetime.now() < endTime:
 	        self.setColor(randint(0, 100), randint(0, 100), randint(0,100))
 	        time.sleep(.01)
-        self.cleanUp()
         return
 
     def cleanUp(self):
@@ -69,8 +68,6 @@ def main():
             exit()
         else:
             print('Not a good input... Try again.')
-            light.cleanUp()
-
 
 light = LEDLight()
 main()
