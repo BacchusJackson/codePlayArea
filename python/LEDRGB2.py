@@ -32,6 +32,7 @@ class Light():
         for pin in self.colors[color]:
             GPIO.setup(pin, GPIO.OUT)
             GPIO.output(pin, GPIO.HIGH)
+        self.status = 'on'
 
     def off(self):
         for color in self.colors:
@@ -45,10 +46,11 @@ def main():
     light1 = Light()
     while True:
         usrInput = input('--> ')
+        print(usrInput + " light on")
         if usrInput == 'off':
             light1.off
+            print('light off')
         else:
             light1.setColor(usrInput)
 
-
-        
+main()
