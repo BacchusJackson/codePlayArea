@@ -19,6 +19,7 @@ pinBlue = 13  #GPIO.BOARD format
 
 class Light():
     def __init__(self):
+        GPIO.setwarnings = False
         self.status = ''
         self.colors = {
             'red':[pinRed], 'blue':[pinBlue], 
@@ -30,7 +31,6 @@ class Light():
         for pin in self.colors[color]:
             GPIO.setup(pin, GPIO.OUT)
             GPIO.output(pin, GPIO.HIGH)
-            GPIO.cleanup()
 
     def off(self):
         for color in self.colors:
