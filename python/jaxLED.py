@@ -24,6 +24,7 @@ class LEDLight():
         self.b.start(0)
         self.g.start(0)
         return None
+        
     def setColor(self, red, green, blue):
         print('started set color')
         self.r.ChangeDutyCycle(int(red))
@@ -31,14 +32,21 @@ class LEDLight():
         self.b.ChangeDutyCycle(int(blue))
         time.sleep(5)
         print('end set color')
+
+    def setColor2(self, red, green, blue):
+        print('set color 2 --> Start')
+        print('set color 2 --> End')
+
     def turnOff(self):
         self.setColor(0, 0, 0)
+
     def flashRandomColors(self, inputSeconds):
         endTime = datetime.now() + timedelta(seconds=int(inputSeconds))
         while datetime.now() < endTime:
 	        self.setColor(randint(0, 100), randint(0, 100), randint(0,100))
 	        time.sleep(.01)
         self.cleanUp()
+
     def cleanUp(self):
         print('cleaning up...')
         GPIO.cleanup()
@@ -67,5 +75,5 @@ def main():
 
 
 light = LEDLight()
-main()
 
+light.setColor2(50, 50, 50)
