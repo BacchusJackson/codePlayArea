@@ -21,7 +21,7 @@ class Light():
     def __init__(self):
         GPIO.setwarnings = False
         self.status = ''
-        colors = {
+        self.colors = {
             'red':[pinRed], 'blue':[pinBlue], 
             'green':[pinGreen], 'yellow':[pinRed, pinGreen]
             }
