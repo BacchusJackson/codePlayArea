@@ -59,9 +59,6 @@ def main():
     light1 = Light()
     while True:
         usrInput = input('--> ')
-        if light1.isColor(usrInput) == False:
-            print(usrInput + ' is not a color... Try again silly.')
-            continue
         if usrInput == 'off':
             light1.off()
             print('light off')
@@ -70,6 +67,9 @@ def main():
             GPIO.cleanup()
             exit()
         else:
+            if light1.isColor(usrInput) == False:
+                print(usrInput + ' is not a color... Try again silly.')
+                continue
             print(usrInput + " light on")
             light1.setColor(usrInput)
 
