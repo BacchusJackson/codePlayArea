@@ -23,7 +23,8 @@ class Light():
 
 light = Light()
 
-print(len(light.colors['red']))
-
-
+if 'red' in light.colors.keys():
+    print('good')
+else:
+    print('bad')
 

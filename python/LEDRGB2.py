@@ -36,6 +36,12 @@ class Light():
             GPIO.setup(pin, GPIO.OUT)
             GPIO.output(pin, GPIO.HIGH)
         self.status = 'on'
+    
+    def isColor(self, color):
+        if color in self.colors.keys():
+            return True
+        else:
+            return False
 
     def off(self):
         GPIO.setmode(GPIO.BOARD)
@@ -53,13 +59,7 @@ def main():
     light1 = Light()
     while True:
         usrInput = input('--> ')
-        goodInput = False
-        for color in light1.colors:
-            if usrInput == color:
-                goodInput = True
-                break
-        
-        if goodInput == False:
+        if light1.isColor(usrInput) == False:
             print(usrInput + ' is not a color... Try again silly.')
             continue
         if usrInput == 'off':
