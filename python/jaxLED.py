@@ -31,7 +31,7 @@ class LEDLight():
     def turnOff(self):
 	    self.setColor(0, 0, 0)
     def flashRandomColors(self, inputSeconds):
-        endTime = datetime.now() + timedelta(seconds=inputSeconds)
+        endTime = datetime.now() + timedelta(seconds=int(inputSeconds))
         while datetime.now() < endTime:
 	        self.setColor(randint(0, 100), randint(0, 100), randint(0,100))
 	        time.sleep(.01)
