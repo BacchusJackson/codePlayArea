@@ -15,13 +15,13 @@ class LEDLight():
         GPIO.setup(self.G, GPIO.OUT, initial=GPIO.LOW)
         GPIO.setup(self.B, GPIO.OUT, initial=GPIO.LOW)
         #set rgb default values
-        r = GPIO.PWM(self.R, 1)
-        g = GPIO.PWM(self.G, 1)
-        b = GPIO.PWM(self.B, 1)
+        self.r = GPIO.PWM(self.R, 1)
+        self.g = GPIO.PWM(self.G, 1)
+        self.b = GPIO.PWM(self.B, 1)
         #initialize the pins
-        r.start(0)
-        b.start(0)
-        g.start(0)
+        self.r.start(0)
+        self.b.start(0)
+        self.g.start(0)
         return None
     def setColor(self, red, green, blue):
 	    self.r.ChangeDutyCycle(red)
