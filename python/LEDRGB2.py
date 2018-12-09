@@ -36,7 +36,6 @@ class Light():
     def off(self):
         for color in self.colors:
             for pin in self.colors[color]:
-                GPIO.setmode(GPIO.BOARD)
                 GPIO.setup(pin, GPIO.OUT)
                 GPIO.output(pin, GPIO.LOW)
         self.status = 'off'
