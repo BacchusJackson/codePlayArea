@@ -1,5 +1,6 @@
 import RPi.GPIO as GPIO
 import time
+from random import randint
 
 #set up pin constants
 R = 11
@@ -28,16 +29,20 @@ def setColor(red, green, blue):
 	r.ChangeDutyCycle(red)
 	g.ChangeDutyCycle(green)
 	b.ChangeDutyCycle(blue)
-	print('should be a different color...')
 
 def turnOff():
 	setColor(0, 0, 0)
 
 
-setColor(100, 100, 100)
-time.sleep(3)
+counter = 0
+while counter < 1000:
+	setColor(randint(0, 100), randint(0, 100), randint(0,100))
+	time.sleep(.01)
+	counter = counter + 1
+
 turnOff()
 
 print('cleaning up...')
 GPIO.cleanup()
+
 
