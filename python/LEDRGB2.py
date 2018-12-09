@@ -50,6 +50,10 @@ def main():
         if usrInput == 'off':
             light1.off
             print('light off')
+        elif usrInput == 'exit':
+            print('.....exiting program')
+            GPIO.cleanup()
+            exit()
         else:
             light1.setColor(usrInput)
 
