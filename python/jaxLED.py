@@ -6,6 +6,7 @@ from random import randint
 class LEDLight():
     #Set up the board
     def __init__(self):
+        print('initing..')
         #set up pin constants
         self.R = 11
         self.G = 15
