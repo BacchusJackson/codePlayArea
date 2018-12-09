@@ -42,8 +42,6 @@ class LEDLight():
         GPIO.cleanup()
 
 def main():
-
-    light = LEDLight()
     menu = '\n1 - Enter RGB Values \n2 - Random Strobe \noff - Turn off light \nexit - exit program'
     print(menu)
     while True:
@@ -65,5 +63,7 @@ def main():
             print('Not a good input... Try again.')
             light.cleanUp
 
+
+light = LEDLight()
 main()
 
