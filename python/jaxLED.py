@@ -25,10 +25,12 @@ class LEDLight():
         self.g.start(0)
         return None
     def setColor(self, red, green, blue):
-        self.r.ChangeDutyCycle(float(red))
-        self.g.ChangeDutyCycle(float(green))
-        self.b.ChangeDutyCycle(float(blue))
+        print('started set color')
+        self.r.ChangeDutyCycle(int(red))
+        self.g.ChangeDutyCycle(int(green))
+        self.b.ChangeDutyCycle(int(blue))
         time.sleep(5)
+        print('end set color')
     def turnOff(self):
         self.setColor(0, 0, 0)
     def flashRandomColors(self, inputSeconds):
