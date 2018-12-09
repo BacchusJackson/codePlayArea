@@ -57,13 +57,13 @@ def main():
             usrSeconds = input('How long? (seconds) --> ')
             light.flashRandomColors(usrSeconds)
         elif usrInput == 'off':
-            light.turnOff
+            light.turnOff()
         elif usrInput == 'exit':
-            light.cleanUp
+            light.cleanUp()
             exit()
         else:
             print('Not a good input... Try again.')
-            light.cleanUp
+            light.cleanUp()
 
 
 light = LEDLight()
