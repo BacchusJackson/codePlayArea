@@ -21,9 +21,9 @@ class LEDLight():
         self.b = GPIO.PWM(self.B, 1)
         #initialize the pins
         self.r.start(0)
-        self.b.start(0)
         self.g.start(0)
-        return None
+        self.b.start(0)
+        return
 
     def setColor(self, red, green, blue):
         print('started set color')
@@ -32,9 +32,11 @@ class LEDLight():
         self.b.ChangeDutyCycle(int(blue))
         time.sleep(10)
         print('end set color')
+        return
 
     def turnOff(self):
         self.setColor(0, 0, 0)
+        return
 
     def flashRandomColors(self, inputSeconds):
         endTime = datetime.now() + timedelta(seconds=int(inputSeconds))
@@ -42,10 +44,12 @@ class LEDLight():
 	        self.setColor(randint(0, 100), randint(0, 100), randint(0,100))
 	        time.sleep(.01)
         self.cleanUp()
+        return
 
     def cleanUp(self):
         print('cleaning up...')
         GPIO.cleanup()
+        return
 
 def main():
     menu = '\n1 - Enter RGB Values \n2 - Random Strobe \noff - Turn off light \nexit - exit program'
