@@ -23,3 +23,9 @@ r.ChangeDutyCycle(float(50))
 g.ChangeDutyCycle(float(50))
 b.ChangeDutyCycle(float(50))
 time.sleep(.04)
+
+usrInput = ""
+
+while usrInput != '0':
+    usrInput = input('--> ')
+
