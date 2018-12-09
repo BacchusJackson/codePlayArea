@@ -104,3 +104,5 @@ print('started set color')
 r.ChangeDutyCycle(float(50))
 g.ChangeDutyCycle(float(50))
 b.ChangeDutyCycle(float(50))
+time.sleep(10)
+
