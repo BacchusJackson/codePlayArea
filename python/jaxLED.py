@@ -30,7 +30,7 @@ class LEDLight():
         self.r.ChangeDutyCycle(int(red))
         self.g.ChangeDutyCycle(int(green))
         self.b.ChangeDutyCycle(int(blue))
-        time.sleep(1)
+        time.sleep(10)
         print('end set color')
 
     def turnOff(self):
