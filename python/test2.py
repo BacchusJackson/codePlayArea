@@ -23,5 +23,7 @@ class Light():
 
 light = Light()
 
-light.setColor('blue')
+print(len(light.colors['red']))
+
+
 

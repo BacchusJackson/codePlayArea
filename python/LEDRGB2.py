@@ -21,7 +21,7 @@ class Light():
     def __init__(self):
         GPIO.setwarnings = False
         self.status = ''
-        self.colors = {
+        colors = {
             'red':[pinRed], 'blue':[pinBlue], 
             'green':[pinGreen], 'yellow':[pinRed, pinGreen]
             }
@@ -53,8 +53,17 @@ def main():
     light1 = Light()
     while True:
         usrInput = input('--> ')
+        goodInput = False
+        for color in light1.colors:
+            if usrInput == color:
+                goodInput = True
+                break
+        
+        if goodInput == False:
+            print(usrInput + ' is not a color... Try again silly.')
+            continue
         if usrInput == 'off':
-            light1.off
+            light1.off()
             print('light off')
         elif usrInput == 'exit':
             print('.....exiting program')
