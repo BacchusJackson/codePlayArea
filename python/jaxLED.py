@@ -28,6 +28,7 @@ class LEDLight():
         self.r.ChangeDutyCycle(float(red))
         self.g.ChangeDutyCycle(float(green))
         self.b.ChangeDutyCycle(float(blue))
+        time.sleep(5)
     def turnOff(self):
         self.setColor(0, 0, 0)
     def flashRandomColors(self, inputSeconds):
@@ -65,3 +66,4 @@ def main():
             light.cleanUp
 
 main()
+
