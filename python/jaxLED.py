@@ -35,6 +35,9 @@ class LEDLight():
 
     def setColor2(self, red, green, blue):
         print('set color 2 --> Start')
+	self.r.ChangeDutyCycle(int(red))
+	self.g.ChangeDutyCycle(int(green))
+	self.b.changeDutyCycle(int(blue))
         print('set color 2 --> End')
 
     def turnOff(self):
