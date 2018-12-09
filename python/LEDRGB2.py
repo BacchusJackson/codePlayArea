@@ -29,6 +29,7 @@ class Light():
 
     def setColor(self, color):
         GPIO.setmode(GPIO.BOARD)
+        self.off()
         for pin in self.colors[color]:
             GPIO.setup(pin, GPIO.OUT)
             GPIO.output(pin, GPIO.HIGH)
@@ -39,6 +40,7 @@ class Light():
             for pin in self.colors[color]:
                 GPIO.setup(pin, GPIO.OUT)
                 GPIO.output(pin, GPIO.LOW)
+        GPIO.cleanup()
         self.status = 'off'
 
 
