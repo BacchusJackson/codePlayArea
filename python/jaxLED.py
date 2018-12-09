@@ -1,5 +1,6 @@
 import RPi.GPIO as GPIO
 import time
+from datetime import datetime, timedelta
 from random import randint
 
 class LEDLight():
@@ -30,11 +31,10 @@ class LEDLight():
     def turnOff(self):
 	    self.setColor(0, 0, 0)
     def flashRandomColors(self, inputSeconds):
-        counter = 0
-        while counter < int(10 * inputSeconds):
+        endTime = datetime.now() + timedelta(seconds=inputSeconds)
+        while datetime.now() < endTime:
 	        self.setColor(randint(0, 100), randint(0, 100), randint(0,100))
 	        time.sleep(.01)
-	        counter = counter + 1
         self.cleanUp()
     def cleanUp(self):
         print('cleaning up...')
