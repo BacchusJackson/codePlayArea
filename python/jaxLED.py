@@ -31,7 +31,7 @@ class LEDLight():
 	    self.setColor(0, 0, 0)
     def flashRandomColors(self, inputSeconds):
         counter = 0
-        while counter < 100 * inputSeconds:
+        while counter < int(100 * inputSeconds):
 	        self.setColor(randint(0, 100), randint(0, 100), randint(0,100))
 	        time.sleep(.01)
 	        counter = counter + 1
@@ -42,7 +42,7 @@ class LEDLight():
 
 def main():
     light = LEDLight()
-    menu = '1 - Enter RGB Values \n 2 - Random Strobe \n, off - Turn off light \n, exit - exit program'
+    menu = '\n1 - Enter RGB Values \n 2 - Random Strobe \n off - Turn off light \n, exit - exit program'
     print(menu)
     usrInput = input('Menu Option --> ')
     if usrInput == '1':
