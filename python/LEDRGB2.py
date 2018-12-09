@@ -32,11 +32,13 @@ class Light():
         self.off()
         for pin in self.colors[color]:
             print(pin)
+            GPIO.setmode(GPIO.BOARD)
             GPIO.setup(pin, GPIO.OUT)
             GPIO.output(pin, GPIO.HIGH)
         self.status = 'on'
 
     def off(self):
+        GPIO.setmode(GPIO.BOARD)
         GPIO.setup(pinRed, GPIO.OUT)
         GPIO.output(pinRed, GPIO.LOW)
         GPIO.setup(pinBlue, GPIO.OUT)
