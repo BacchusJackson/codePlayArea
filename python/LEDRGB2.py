@@ -25,6 +25,7 @@ class Light():
             'red':[pinRed], 'blue':[pinBlue], 
             'green':[pinGreen], 'yellow':[pinRed, pinGreen]
             }
+        return None
 
     def setColor(self, color):
         GPIO.setmode(GPIO.BOARD)
