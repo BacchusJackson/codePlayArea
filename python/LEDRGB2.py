@@ -23,7 +23,7 @@ class Light():
         self.status = ''
         self.colors = {
             'red':[pinRed], 'blue':[pinBlue], 
-            'green':[pinGreen], 'yellow':[pinRed, pinGreen]
+            'green':[pinGreen]
             }
         return None
 
@@ -36,6 +36,14 @@ class Light():
             GPIO.output(pin, GPIO.HIGH)
         self.status = 'on'
     
+    def setRGB(self, redRGB, greenRGB, blueRGB):
+        GPIO.setmode(GPIO.BOARD)
+        for pin in self.colors:
+            GPIO.setup(pin, GPIO.OUT)
+        GPIO.PWM(pinRed, redRGB)
+        GPIO.PWM(pinGreen, greenRGB)
+        GPIO.PWM(pinBlue, blueRGB)
+        
     def isColor(self, color):
         if color in self.colors.keys():
             return True
@@ -65,6 +73,11 @@ def main():
             print('.....exiting program')
             light1.off()
             exit()
+        elif usrInput == 'rgb':
+            usrRed = input('Red (1 to 255) --> ')
+            usrGreen = input('Green (1 to 255--> ')
+            usrBlue = input('Blue (1 to 255) --> ')
+            light1.setRGB(usrRed, usrGreen, usrBlue)
         else:
             if light1.isColor(usrInput) == False:
                 print(usrInput + ' is not a color... Try again silly.')
