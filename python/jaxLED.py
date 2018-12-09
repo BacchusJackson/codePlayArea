@@ -41,26 +41,27 @@ class LEDLight():
         GPIO.cleanup()
 
 def main():
+
     light = LEDLight()
     menu = '\n1 - Enter RGB Values \n2 - Random Strobe \noff - Turn off light \nexit - exit program'
     print(menu)
-    usrInput = input('Menu Option --> ')
-    if usrInput == '1':
-        usrRed = input('Red (1 to 100): ')
-        usrGreen = input('Green (1 to 100): ')
-        usrBlue = input('Blue (1 to 100): ')
-        light.setColor(usrRed, usrGreen, usrBlue)
-    if usrInput == '2':
-        usrSeconds = input('How long? (seconds) --> ')
-        light.flashRandomColors(usrSeconds)
-    if usrInput == 'off':
-        light.turnOff
-    if usrInput == 'exit':
-        light.cleanUp
-        exit()
-    else:
-        light.cleanUp
-        exit()
+    while True:
+        usrInput = input('Menu Option --> ')
+        if usrInput == '1':
+            usrRed = input('Red (1 to 100): ')
+            usrGreen = input('Green (1 to 100): ')
+            usrBlue = input('Blue (1 to 100): ')
+            light.setColor(usrRed, usrGreen, usrBlue)
+        if usrInput == '2':
+            usrSeconds = input('How long? (seconds) --> ')
+            light.flashRandomColors(usrSeconds)
+        if usrInput == 'off':
+            light.turnOff
+        if usrInput == 'exit':
+            light.cleanUp
+            exit()
+        else:
+            light.cleanUp
+            exit()
 
-while True:
-    main()
+main()
