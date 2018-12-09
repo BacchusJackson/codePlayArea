@@ -43,6 +43,7 @@ class LEDLight():
 def main():
     light = LEDLight()
     menu = '1 - Enter RGB Values \n 2 - Random Strobe \n, off - Turn off light \n, exit - exit program'
+    print(menu)
     usrInput = input('Menu Option --> ')
     if usrInput == '1':
         usrRed = input('Red (1 to 100): ')
