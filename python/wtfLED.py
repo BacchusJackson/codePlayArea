@@ -18,17 +18,20 @@ r.start(0)
 g.start(0)
 b.start(0)
 
-def setColor(red, green, blue):
-    print('started set color')
-    r.ChangeDutyCycle(float(red))
-    g.ChangeDutyCycle(float(green))
-    b.ChangeDutyCycle(float(blue))
-    time.sleep(.04)
+class LEDLight():
+    def setColor(red, green, blue):
+        print('started set color')
+        r.ChangeDutyCycle(float(red))
+        g.ChangeDutyCycle(float(green))
+        b.ChangeDutyCycle(float(blue))
+        time.sleep(.04)
+
 
 usrInput = ""
+light = LEDLight()
 
 while usrInput != '0':
     usrInput = input('--> ')
     if usrInput == '1':
-        setColor(50, 50, 50)
+        light.setColor(50, 50, 50)
 
