@@ -30,6 +30,7 @@ class Light():
         for pin in self.colors[color]:
             GPIO.setup(pin, GPIO.OUT)
             GPIO.output(pin, GPIO.HIGH)
+            GPIO.cleanup()
 
     def off(self):
         for color in self.colors:
