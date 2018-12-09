@@ -74,9 +74,33 @@ def main():
             print('Not a good input... Try again.')
             light.cleanUp()
 
+def test():
+    light = LEDLight()
 
-light = LEDLight()
+    print('New open.. Pushing 50 50 50')
+    light.setColor(50, 50, 50)
+    light.cleanUp()
 
-'New open.. Pushing 50 50 50'
-light.setColor(50, 50, 50)
-light.cleanUp()
+
+#set up pin constants
+R = 11
+G = 15
+B = 13
+PINS = [R,G,B]
+GPIO.setmode(GPIO.BOARD)
+GPIO.setup(R, GPIO.OUT, initial=GPIO.LOW)
+GPIO.setup(G, GPIO.OUT, initial=GPIO.LOW)
+GPIO.setup(B, GPIO.OUT, initial=GPIO.LOW)
+#set rgb default values
+r = GPIO.PWM(R, 1)
+g = GPIO.PWM(G, 1)
+b = GPIO.PWM(B, 1)
+#initialize the pins
+r.start(0)
+g.start(0)
+b.start(0)
+
+print('started set color')
+r.ChangeDutyCycle(int(50))
+g.ChangeDutyCycle(int(50))
+b.ChangeDutyCycle(int(50))
