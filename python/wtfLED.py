@@ -10,9 +10,9 @@ GPIO.setup(R, GPIO.OUT)
 GPIO.setup(G, GPIO.OUT)
 GPIO.setup(B, GPIO.OUT)
 #set rgb default values
-r = GPIO.PWM(R, 1)
-g = GPIO.PWM(G, 1)
-b = GPIO.PWM(B, 1)
+r = GPIO.PWM(R, 255)
+g = GPIO.PWM(G, 255)
+b = GPIO.PWM(B, 255)
 #initialize the pins
 r.start(0)
 g.start(0)
