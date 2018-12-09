@@ -52,16 +52,16 @@ def main():
             usrGreen = input('Green (1 to 100): ')
             usrBlue = input('Blue (1 to 100): ')
             light.setColor(usrRed, usrGreen, usrBlue)
-        if usrInput == '2':
+        elif usrInput == '2':
             usrSeconds = input('How long? (seconds) --> ')
             light.flashRandomColors(usrSeconds)
-        if usrInput == 'off':
+        elif usrInput == 'off':
             light.turnOff
-        if usrInput == 'exit':
+        elif usrInput == 'exit':
             light.cleanUp
             exit()
         else:
+            print('Not a good input... Try again.')
             light.cleanUp
-            exit()
 
 main()
