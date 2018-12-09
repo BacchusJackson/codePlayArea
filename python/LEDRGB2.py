@@ -37,11 +37,11 @@ class Light():
 
     def off(self):
         GPIO.setup(pinRed, GPIO.OUT)
-        GPIO.output(pinRed, GPIO.HIGH)
+        GPIO.output(pinRed, GPIO.LOW)
         GPIO.setup(pinBlue, GPIO.OUT)
-        GPIO.output(pinBlue, GPIO.HIGH)
+        GPIO.output(pinBlue, GPIO.LOW)
         GPIO.setup(pinGreen, GPIO.OUT)
-        GPIO.output(pinGreen, GPIO.HIGH)
+        GPIO.output(pinGreen, GPIO.LOW)
         GPIO.cleanup()
         self.status = 'off'
 
