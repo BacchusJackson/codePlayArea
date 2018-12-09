@@ -13,9 +13,9 @@ class LEDLight():
         self.B = 13
         self.PINS = [self.R,self.G,self.B]
         GPIO.setmode(GPIO.BOARD)
-        GPIO.setup(self.R, GPIO.OUT, initial=GPIO.LOW)
-        GPIO.setup(self.G, GPIO.OUT, initial=GPIO.LOW)
-        GPIO.setup(self.B, GPIO.OUT, initial=GPIO.LOW)
+        GPIO.setup(self.R, GPIO.OUT)
+        GPIO.setup(self.G, GPIO.OUT)
+        GPIO.setup(self.B, GPIO.OUT)
         #set rgb default values
         self.r = GPIO.PWM(self.R, 1)
         self.g = GPIO.PWM(self.G, 1)
@@ -27,12 +27,10 @@ class LEDLight():
         return
 
     def setColor(self, red, green, blue):
-        print('started set color')
         self.r.ChangeDutyCycle(int(red))
         self.g.ChangeDutyCycle(int(green))
         self.b.ChangeDutyCycle(int(blue))
-        time.sleep(10)
-        print('end set color')
+        time.sleep(5)
         return
 
     def turnOff(self):
@@ -74,35 +72,9 @@ def main():
             print('Not a good input... Try again.')
             light.cleanUp()
 
-def test():
-    light = LEDLight()
 
-    print('New open.. Pushing 50 50 50')
-    light.setColor(50, 50, 50)
-    light.cleanUp()
+light = LEDLight()
 
-
-#set up pin constants
-R = 11
-G = 15
-B = 13
-PINS = [R,G,B]
-GPIO.setmode(GPIO.BOARD)
-GPIO.setup(R, GPIO.OUT, initial=GPIO.LOW)
-GPIO.setup(G, GPIO.OUT, initial=GPIO.LOW)
-GPIO.setup(B, GPIO.OUT, initial=GPIO.LOW)
-#set rgb default values
-r = GPIO.PWM(R, 1)
-g = GPIO.PWM(G, 1)
-b = GPIO.PWM(B, 1)
-#initialize the pins
-r.start(0)
-g.start(0)
-b.start(0)
-
-print('started set color')
-r.ChangeDutyCycle(float(50))
-g.ChangeDutyCycle(float(50))
-b.ChangeDutyCycle(float(50))
-time.sleep(10)
+print('setting color..')
+light.setColor(50,50,50)
 
