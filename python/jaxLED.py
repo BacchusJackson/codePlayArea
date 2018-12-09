@@ -24,21 +24,14 @@ class LEDLight():
         self.b.start(0)
         self.g.start(0)
         return None
-        
+
     def setColor(self, red, green, blue):
         print('started set color')
         self.r.ChangeDutyCycle(int(red))
         self.g.ChangeDutyCycle(int(green))
         self.b.ChangeDutyCycle(int(blue))
-        time.sleep(5)
+        time.sleep(1)
         print('end set color')
-
-    def setColor2(self, red, green, blue):
-        print('set color 2 --> Start')
-	self.r.ChangeDutyCycle(int(red))
-	self.g.ChangeDutyCycle(int(green))
-	self.b.changeDutyCycle(int(blue))
-        print('set color 2 --> End')
 
     def turnOff(self):
         self.setColor(0, 0, 0)
@@ -79,4 +72,6 @@ def main():
 
 light = LEDLight()
 
-light.setColor2(50, 50, 50)
+'New open.. Pushing 50 50 50'
+light.setColor(50, 50, 50)
+light.cleanUp()
