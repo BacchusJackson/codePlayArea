@@ -19,7 +19,7 @@ g.start(0)
 b.start(0)
 
 class LEDLight():
-    def setColor(red, green, blue):
+    def setColor(self, red, green, blue):
         print('started set color')
         r.ChangeDutyCycle(float(red))
         g.ChangeDutyCycle(float(green))
