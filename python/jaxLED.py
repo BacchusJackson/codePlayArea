@@ -3,34 +3,33 @@ import time
 from datetime import datetime, timedelta
 from random import randint
 
+#set up pin constants
+R = 11
+G = 15
+B = 13
+GPIO.setmode(GPIO.BOARD)
+GPIO.setup(R, GPIO.OUT)
+GPIO.setup(G, GPIO.OUT)
+GPIO.setup(B, GPIO.OUT)
+#set rgb default values
+r = GPIO.PWM(R, 255)
+g = GPIO.PWM(G, 255)
+b = GPIO.PWM(B, 255)
+#initialize the pins
+r.start(0)
+g.start(0)
+b.start(0)
+
 class LEDLight():
     #Set up the board
     def __init__(self):
         print('initing..')
-        #set up pin constants
-        self.R = 11
-        self.G = 15
-        self.B = 13
-        self.PINS = [self.R,self.G,self.B]
-        GPIO.setmode(GPIO.BOARD)
-        GPIO.setup(self.R, GPIO.OUT)
-        GPIO.setup(self.G, GPIO.OUT)
-        GPIO.setup(self.B, GPIO.OUT)
-        #set rgb default values
-        self.r = GPIO.PWM(self.R, 1)
-        self.g = GPIO.PWM(self.G, 1)
-        self.b = GPIO.PWM(self.B, 1)
-        #initialize the pins
-        self.r.start(0)
-        self.g.start(0)
-        self.b.start(0)
-        return
 
     def setColor(self, red, green, blue):
-        self.r.ChangeDutyCycle(int(red))
-        self.g.ChangeDutyCycle(int(green))
-        self.b.ChangeDutyCycle(int(blue))
-        time.sleep(5)
+        r.ChangeDutyCycle(int(red))
+        g.ChangeDutyCycle(int(green))
+        b.ChangeDutyCycle(int(blue))
+        time.sleep(.04)
         return
 
     def turnOff(self):
@@ -74,7 +73,4 @@ def main():
 
 
 light = LEDLight()
-
-print('setting color..')
-light.setColor(50,50,50)
-
+main()
