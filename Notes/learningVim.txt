@@ -1,0 +1,13 @@
+This is a text document I'm using to learn how to use Vim.
+Vim stands for Vi Improved, which is really ridiculous.
+	I had to change the settings of Terminal becuase I need to see
+	a cursor square instead of line. I think that was my first
+	problem.
+I wonder how word wrapping works?
+
+I should probably change to a underline cursor... Let's try that.
+Okay, that's a little less obnoxious.
+
+Now I need to find out how to change the tab behavior, especially
+if I'm going to use this to write in python.
+Actually, let's see what happens if I try to write a python file...

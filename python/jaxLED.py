@@ -49,7 +49,7 @@ class LEDLight():
         return
 
 def main():
-    menu = '\n1 - Enter RGB Values \n2 - Random Strobe \noff - Turn off light \nexit - exit program'
+    menu = '\n1 - Enter RGB Values \n2 - Random Strobe \noff - Turn off light \nexit - exit program\n'
     print(menu)
     while True:
         usrInput = input('Menu Option --> ')
