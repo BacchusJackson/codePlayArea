@@ -50,76 +50,60 @@ Sub addToArray()
     'put the data into an array
     data() = ws.Range(Cells(2, 1), Cells(RowsCount, colCount)).Value
     
-    Call sortArray(data())
+    n = UBound(data)
+    Call quickSort(data(), 1, n, 1)
+    
+    Debug.Print ("complete")
+    'Call sortArray(data())
     'arraySwap data(), 1, 4
     
 End Sub
 
-Sub sortArray(data() As Variant)
-    'Dim temp() As Variant
-    Dim hiRight As New Collection
-    Dim loLeft As New Collection
+Function dataPartition(ByRef data() As Variant, lo, hi, sortByCol)
+    Dim i As Long
     
-    'ReDim temp(1 To UBound(data), 1 To UBound(data, 2))
+    i = lo - 1
+    rightMostCompareValue = data(hi, sortByCol)
     
-    pivot = data(1, 1)
-    
-    'split the data into two collections
-    For i = 1 To UBound(data)
-        
-        If data(i, 1) >= pivot Then
-            hiRight.Add i
-        Else
-            loLeft.Add i
+    For j = lo To hi
+        If data(j, sortByCol) <= rightMostCompareValue Then
+            i = i + 1
+            If i <> j Then
+                arraySwap data(), i, j
+            End If
         End If
-        
-    Next i
+    Next j
     
-    'We know where the pivot should go becuase everything else was sorted around it
-    'there are x in the lower half (left) collection so the pivot must be one after that
-    arraySwap data(), 1, loLeft.Count + 1
+    arraySwap data(), i, hi
+    dataPartition = i + 1
     
-    'Loop through the loLeft part and follow the same principle
-    sIndex = 1
-    Do Until loLeft.Count = 1
-        sIndex = 1
-        pivot = data(loLeft(1), 1)
-        
-        If data(loLeft(sIndex), 1) >= pivot Then
-            
-            arraySwap data(), sIndex, loLeft(1)
-            loLeft.Remove (1)
-        Else
-            sIndex = sIndex + 1
-            
-        End If
-        
-    Loop
+End Function
+
+Sub quickSort(ByRef data() As Variant, lo, hi, sortByCol)
     
-    'loop through the hiRight
-    sIndex = 1
-    Do Until hiRight.Count = 1
-        sIndex = 1
-        pivot = data(hiRight(1), 1)
+    If lo < hi Then
         
-        If data(hiRight(sIndex), 1) >= pivot Then
-            
-            arraySwap data(), sIndex, hiRight(1)
-            hiRight.Remove (1)
-        Else
-            sIndex = sIndex + 1
-            
-        End If
+        'take the higher values and put them on the right
+        'take the lower values and put them on the left
+        'figure out where that split is
+        pivotPoint = dataPartition(data(), lo, hi, sortByCol)
         
-        
-    Loop
-    
-    Debug.Print data(1, 1)
-    
+        'call this function again with a new hi of -1 from the split to order the lower values
+        Call quickSort(data(), lo, pivotPoint - 1, 1)
+        'call this fucntion again with a new high of +1 from the split to order the other higher values
+        Call quickSort(data(), pivotPoint + 1, hi, 1)
+    End If
+
 End Sub
 
 Function arraySwap(ByRef data() As Variant, index1, index2)
     Dim temp1() As Variant
+    
+    'Don't want to waste compute time if the numbers are equal
+    If index1 = index2 Then
+        arraySwap = True
+        Exit Function
+    End If
     
     ReDim temp(1 To UBound(data), 1 To UBound(data, 2))
     
