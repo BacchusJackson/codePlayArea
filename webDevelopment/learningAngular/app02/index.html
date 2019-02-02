@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-    <link rel="stylesheet" href="jxStyle.css">
-    <!-- <script src="jquery-3.3.1.min.js"></script> -->
+    <link rel="stylesheet" href="css/jxStyle.css">
+    <script src="js/jquery-3.3.1.min.js"></script>
     <head>
         <title>JaX Home Page</title>
     </head>
@@ -15,7 +15,7 @@
                 <li>Fun Links</li>
             </ul>
         </header>
-        <div id="circle"></div>
+        <div id="circle"> </div>
         <section>
             <div class="infoCard"> 
                 <div class="cardItem">
@@ -44,7 +44,25 @@
                 <p>Last Name</p>
                 <input type="text" class="cardInput"></input>
                 <p>Animal Type</p>
-                
+                <div class="mdc-menu mdc-menu-surface" tabindex="-1">
+                    <ul class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical">
+                        <li class="mdc-list-item" role="menuitem">
+                            <span class="mdc-list-item__text">Menu Item One</span>
+                        </li>
+                            <li class="mdc-list-item" role="menuitem">                        
+                                <span class="mdc-list-item__text">Menu Item Two</span>
+                            </li>
+                            <li class="mdc-list-item" role="menuitem">
+                                <span class="mdc-list-item__text">Menu Item Three</span>
+                            </li>
+                            <li class="mdc-list-item" role="menuitem">
+                                <span class="mdc-list-item__text">Menu Item Four</span>
+                            </li>
+                            <li class="mdc-list-item" role="menuitem">
+                                <span class="mdc-list-item__text">Menu Item Five</span>
+                            </li>
+                    </ul>
+                </div>
             </div>
             <div class="button cardItem">
                 <button class=dropDown>submit</button>
@@ -52,8 +70,8 @@
         </div>
     </section>
 
-    <!-- <script src="add-content.js"></script> -->
-    <script src="fetch-learn.js"></script>
+    <script src="js/add-content.js"></script>
+    <!-- <script src="fetch-learn.js"></script> -->
     </body>
 
     
