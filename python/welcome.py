@@ -1,6 +1,7 @@
 import hashlib
 import getpass
 
+#takes an input and converts it to a hash
 def inputToHash(inText = ""):
     if inText == "" :
         usrInput = raw_input('enter String: ' )
@@ -13,6 +14,7 @@ def inputToHash(inText = ""):
 
     return mHash.hexdigest()
 
+#converts the user input to a hash and compares it to the hash string
 def login():
     password = getpass.getpass('Password: ')
     password = (password, "!") [password == ""]
@@ -24,6 +26,7 @@ def login():
 num = 0
 status = False
 
+#main loop
 while True:
     status = login()
     num=num+1

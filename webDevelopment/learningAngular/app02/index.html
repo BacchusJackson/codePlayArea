@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+    <link rel="stylesheet" href="css/materialize.min.css">
     <link rel="stylesheet" href="css/jxStyle.css">
     <script src="js/jquery-3.3.1.min.js"></script>
     <head>
@@ -7,70 +8,69 @@
     </head>
 
     <body>
-        <header>
-        <h1>JaX Home Page!</h1>
-            <ul>
-                <li>Home</li>
-                <li>About</li>
-                <li>Fun Links</li>
-            </ul>
-        </header>
-        <div id="circle"> </div>
-        <section>
-            <div class="infoCard"> 
-                <div class="cardItem">
-                    <h2>Who am I?</h2>
+        
+        <nav>
+            <div class="nav-wrapper blue-grey">
+                <a href="#" class="brand-logo center">JaX</a>
+                <ul id="nav-mobile" class="left hide-on-med-and-down">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Links</a></li>
+                </ul>
+            </div>
+        </nav>
+        <br>
+        <div class="container">
+            <div class="row">
+                <div class="col s8 push-s2"> 
+                    <div class="card blue-grey">
+                        <div class="card-content white-text">
+                            <span class="card-title">Card Title</span>
+                            <p>
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa ab modi est! Optio natus et, cumque odio dignissimos id eaque ratione facere reiciendis blanditiis fugit rem, harum voluptatum repellendus sequi necessitatibus quasi velit sapiente maxime modi aliquid? Unde, aut ut.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <div class="cardItem">
-                    <p id="p1">
-                        I am a person who takes nothing seriously and I just want to be good
-                        at things.
-                    </p>
-                </div>
-                <div class="button cardItem">
-                    <button id="btn1">Click Me!</button>
+                <div class="col s8 push-s2">
+                    <div class="card lime">
+                        <div class="card-content white-text">
+                            <span class="card-title">Card 2 Title</span>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium magnam error, laudantium assumenda animi accusamus quia? Ad, neque cupiditate eos a reiciendis quod rem temporibus atque incidunt mollitia, assumenda ab suscipit cum error sint, magnam quisquam quaerat obcaecati molestias unde vitae consequuntur! Est, neque officia.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </section>
 
-    <section>
-        <div class="infoCard" style="margin-top:3%;height:400px">
-            <div class="cardItem" style="width:100%;">
-                <h2>Who are you?</h2>
-            </div>
-            <div class="cardItem" style="display: flex; flex-flow: column wrap; margin-top:-50px;">
-                <p>First Name</p>
-                <input type="text" class="cardInput"></input>
-                <p>Last Name</p>
-                <input type="text" class="cardInput"></input>
-                <p>Animal Type</p>
-                <div class="mdc-menu mdc-menu-surface" tabindex="-1">
-                    <ul class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical">
-                        <li class="mdc-list-item" role="menuitem">
-                            <span class="mdc-list-item__text">Menu Item One</span>
-                        </li>
-                            <li class="mdc-list-item" role="menuitem">                        
-                                <span class="mdc-list-item__text">Menu Item Two</span>
-                            </li>
-                            <li class="mdc-list-item" role="menuitem">
-                                <span class="mdc-list-item__text">Menu Item Three</span>
-                            </li>
-                            <li class="mdc-list-item" role="menuitem">
-                                <span class="mdc-list-item__text">Menu Item Four</span>
-                            </li>
-                            <li class="mdc-list-item" role="menuitem">
-                                <span class="mdc-list-item__text">Menu Item Five</span>
-                            </li>
-                    </ul>
+            <!-- second row -->
+            <div class="row">
+                <div class="col s4 push-s2">
+                    <div class="card teal">
+                        <div class="card-content white-text">
+                            <span class="card-title">Card 3 Title</span>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, eius aliquam. Velit facere facilis fuga reiciendis ex cupiditate sequi fugiat?
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s4 push-s2">
+                        <div class="card cyan">
+                            <div class="card-content white-text">
+                                <span class="card-title">Card 4 Title</span>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, eius aliquam. Velit facere facilis fuga reiciendis ex cupiditate sequi fugiat?
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="button cardItem">
-                <button class=dropDown>submit</button>
-            </div>
-        </div>
-    </section>
 
     <script src="js/add-content.js"></script>
+    <script src="js/materialize.min.js"></script>
     <!-- <script src="fetch-learn.js"></script> -->
     </body>
 
