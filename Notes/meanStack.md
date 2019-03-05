@@ -91,6 +91,27 @@ In Angular, your app.component.ts is where you build the pages. Using the decora
     export class AppComponent {
         title = 'app works!';                        // This will replace the {{title}} in the html
     }
+##Components
+Components are pieces of your application. Ex. Navbar
+
 Create a folder src/app/components
     - you can generate components before manually creating them.
+
+ng g component navbar
+    - angular-cli generate component navbar
+
+This will create a folder called navbar
+    import { NavbarComponent } from './components/navbar/navbar.component';
+    in @ngModule -> declarations: [AppComponent, NavbarComponent]
+Angluar-cli auto adds the component to the app.module.ts file
+
+To add this component to the page, add the selector to app.component.html
+*Make sure you're in the src/app/components/ directory before use ng g component*
+
+###Putting it Together
+We created a bunch of components folders that can be edited to our liking
+In the main index.html, we see <app-root>Loading...</app-root> that was the thing we replaced earlier
+
+##Routes
+instead of using a href in HTML, use [routerLink]="['/login']" or [routerLink]="['/']"
 
