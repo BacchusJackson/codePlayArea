@@ -1,0 +1,14 @@
+{
+  "name": "servobot",
+  "version": "1.0.0",
+  "description": "controlling a robot arm with raspberry pi",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "JaX",
+  "license": "MIT",
+  "dependencies": {
+    "rpi-gpio": "^2.1.3"
+  }
+}
